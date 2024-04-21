@@ -8,11 +8,12 @@ from notebook import Notebook
 
 class Menu:
     def __init__(self):
+        self.notebook = Notebook()
         self.choices = {
-            1: Notebook().addStudent(),
-            2: 'self.addDegree',
-            3: 'Add Degree',
-            4: 'Add Course',
+            1: self.notebook.addStudent,
+            2: self.notebook.listStudents,
+            3: self.notebook.listLectureHalls,
+            4: self.notebook.addLectureHall,
             5: 'Add Lecture Hall',
             6: 'Exit',
         }
@@ -43,7 +44,6 @@ class Menu:
                     print('Invalid choice')
             except ValueError:
                 print('Invalid input. Please enter an integer')
-
 
     # def addStudent(self):
     #     print(f'Student Enrollment\n'
@@ -101,5 +101,3 @@ class Menu:
     #     else:
     #         print(f'Degree Registration Error')
     #     printFormat(degreeList())
-
-

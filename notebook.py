@@ -7,6 +7,7 @@ from professor import Professor
 
 
 class Notebook:
+
     def __init__(self):
         self.studentDict = {}
         self.degreeDict = {}
@@ -18,8 +19,8 @@ class Notebook:
     def addStudent(self):
         idNumber = str(input('Enter the Student ID Number: '))
         name = str(input('Enter the Student Name: '))
-        degree = self.addDegree()
         address = self.addAddress()
+        degree = self.addDegree()
         course = self.addCourse()
         oStudent = Student(idNumber, name, degree, address, course)
         self.studentDict[idNumber] = oStudent
@@ -49,7 +50,7 @@ class Notebook:
         name = str(input('Enter the Lecture Hall Name: '))
         seats = int(input('Enter the Lecture Hall Seats: '))
         oLectureHall = LectureHall(name, seats)
-        self.courseDict[name] = oLectureHall
+        self.lectureHallDict[name] = oLectureHall
         return oLectureHall
 
     def addAddress(self):
@@ -74,9 +75,10 @@ class Notebook:
     def listStudents(self):
         print(self.studentDict)
 
-
-
-
+    def listLectureHalls(self):
+        print('Lecture Halls:')
+        for k in self.lectureHallDict:
+            print(self.lectureHallDict[k])
 
     # def degreeList():
     #     degrees = {
